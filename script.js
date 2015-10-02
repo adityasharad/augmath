@@ -861,9 +861,9 @@ function prepare(math) {
 
 	math = math.replace(/\\frac{}/g, "\\frac{1}")
 				.replace(/=$/, "=0")
-				.replace(/0\+/g, "")
-				.replace(/0-/g, "")
-				.replace(/^=/, "0=")
+				.replace(/0\+/g, "").replace(/\+0/g, "")
+        .replace(/0-/g, "").replace(/\-0/g, "")
+				.replace(/^=/, "0=").replace(/=%/, "=0")
 				.replace(/\^{}/g, "")
 				.replace(/\+/g, '--').replace(/(--)+-/g, '-').replace(/--/g, '+');
 
